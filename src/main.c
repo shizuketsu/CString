@@ -4,8 +4,9 @@
 int main(void)
 {
     printf("Include str.h\n");
-    str_t* str = createStr(20, "aboba");
+    str_t* str = createStr(20, "aboba123");
     str_t* str2 = createStr(20, "aboba");
-    printf("%s\n", catStr(str, str2)->data);
+    copyStr(str, str2);
+    printf("%s\n", str2->data);
     return 0;
 }

@@ -62,7 +62,7 @@ str_t* setStr(str_t* str, const char* data)
         i++;
     }
 
-    str->data[str->length] = '\0';
+    str->data[i] = '\0';
     return str;
 }
 
@@ -111,8 +111,24 @@ str_t* catStr(str_t* right, str_t* left)
         i++;
     }
 
-    result->data[result->length] = '\0';
+    result->data[i] = '\0';
     return result;
+}
+
+str_t* copyStr(str_t* from, str_t* to)
+{
+    if(from == NULL || to == NULL || from->data == NULL || to->data == NULL) return NULL;
+    if(from->length > to->length) return NULL;
+
+    int i = 0;
+    while(i < getStrLength(from))
+    {
+        to->data[i] = from->data[i];
+        i++;
+    }
+
+    to->data[i] = '\0';
+    return to;
 }
 
 #endif
