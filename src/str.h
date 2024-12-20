@@ -10,6 +10,7 @@ typedef struct str {
 
 str_t* setStr(str_t* str, char* data);
 void freeStr(str_t* str);
+char* getStr(str_t* str);
 
 str_t* createStr(int length, char* data)
 {
@@ -64,6 +65,21 @@ str_t* setStr(str_t* str, char* data) // она, наверное, не долж
 char* getStr(str_t* str)
 {
     return str->data;
+}
+
+int getStrLength(str_t* str)
+{
+    if(str == NULL) return 0;
+
+    int i = 0;
+    while(i < str->length)
+    {
+        if(str->data[i] == '\0') return i;
+        
+        i++;
+    }
+
+    return i;
 }
 
 #endif
