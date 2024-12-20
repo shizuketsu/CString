@@ -3,7 +3,6 @@
 
 #include <stdlib.h>
 #include <wchar.h>
-#include <stdio.h> // TODO: delete in production
 
 typedef struct str {
     char* data;
